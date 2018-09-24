@@ -19,12 +19,6 @@ export default TabNavigator(
         tabBarLabel: 'Home',
       }
     },
-    Things: {
-      screen: Matches,
-      navigationOptions: {
-        tabBarLabel: 'Matches',
-      },
-    },
     Matches: {
       screen: Matches,
       navigationOptions: {
