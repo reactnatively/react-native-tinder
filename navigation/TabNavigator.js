@@ -1,11 +1,11 @@
 import React from 'react';
-import { TabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation';
 
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 import Matches from '../screens/Matches';
 
-export default TabNavigator(
+export default createMaterialTopTabNavigator(
   {
     Profile: {
       screen: Profile,
@@ -37,7 +37,7 @@ export default TabNavigator(
     tabBarOptions: {
       style: {
         height: 100,
-        backgroundColor: '#fff',
+        backgroundColor: '#333',
       },
     }
   }

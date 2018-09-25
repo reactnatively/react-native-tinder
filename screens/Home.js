@@ -15,7 +15,7 @@ class Home extends React.Component {
 
   //
   componentWillMount() {
-    this.props.dispatch(login("what's appp"))
+    this.props.dispatch(login("this is the homepage..."))
     this.login()
   }
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
-import TabNavigator from './TabNavigator';
+import { createStackNavigator } from 'react-navigation';
+import createMaterialTopTabNavigator from './TabNavigator';
 
-const RootStackNavigator = StackNavigator(
+const RootStackNavigator = createStackNavigator(
   {
     Main: {
-      screen: TabNavigator,
+      screen: createMaterialTopTabNavigator,
     },
   }
 );
