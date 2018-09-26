@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles';
+import RootNavigator from '../navigation/RootNavigator';
 import { connect } from 'react-redux';
 import { login } from '../redux/actions';
 import * as firebase from 'firebase';
@@ -45,7 +46,7 @@ class Login extends React.Component {
       const credential = await firebase.auth.FacebookAuthProvider.credential(token);
 
       // Sign in with credential from the Facebook user.
-      firebase.auth().signInWithCredential(credential).catch((error) => {
+      firebase.auth().signInAndRetrieveDataWithCredential(credential).catch((error) => {
         // Handle Errors here.
         Alert.alert("Try Again")
       });
@@ -54,24 +55,33 @@ class Login extends React.Component {
   }
 
   render() {
-    if(this.props.loggedIn){
-      return(
-        <RootNavigator />
-      )
-    } else {
+    if (this.props.loggedIn) {
+
+      //
       return (
+
+        <RootNavigator />
+
+      );
+
+    } else {
+
+      return (
+
         <View style={styles.container}>
 
           <TouchableOpacity onPress={this.login.bind(this)}>
               <Text>Login</Text>
           </TouchableOpacity>
-          
+
         </View>
 
-      )
+      );
+
     }
 
   }
+
 }
 
 function mapStateToProps(state) {

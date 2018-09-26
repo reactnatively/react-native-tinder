@@ -7,6 +7,9 @@ import { createStore, applyMiddleware } from 'redux';
 const middleware = applyMiddleware(thunkMiddleware)
 const store = createStore(reducers, middleware);
 
+console.ignoredYellowBox = ['Remote debugger'];
+
+//
 export default class App extends React.Component {
   render() {
     return (
